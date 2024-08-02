@@ -68,4 +68,13 @@ img, video {
   background: rgb(255, 0, 0);
   border-radius: 3px;
   text-align: center;
+}
+
+.btn .icon {
+  margin-left: 0.5rem;
+}
+
+.btn:hover {
+  color: var(--primaryColor);
+  background: var(--paleGreen);
 }/*# sourceMappingURL=App.css.map */
