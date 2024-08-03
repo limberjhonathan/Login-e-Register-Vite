@@ -3,6 +3,9 @@ import './Register.css'
 
 export default function Register() {
     return (
-        <div>Register</div>
+        <div>
+            This is Register Page
+            <a href='/'>To Login</a>
+        </div>
     )
 }
