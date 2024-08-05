@@ -1,6 +1,7 @@
 // import React from "react";
 import './Login.css';
 import { Link } from 'react-router-dom';
+import { FaUserShield } from 'react-icons/fa';
 
 import video from '../../LoginAssets/video.mp4'
 import logo from '../../LoginAssets/logo.png'
@@ -31,11 +32,12 @@ export default function Login() {
                     </div>
 
                     <form action="" className='form grid'>
-                        <sapn>Login Status will go here</sapn>
+                        <span>Login Status will go here</span>
                         <div className="inputDiv">
                             <label htmlFor='username'>Username</label>
                             <div className="input flex">
-                                
+                                <FaUserShield className='icon'/>
+                                <input type='text' id='username' placeholder='Enter Username'/>
                             </div>
                         </div>
                     </form>
