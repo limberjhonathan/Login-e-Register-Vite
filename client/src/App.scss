@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
 
-:root{
+:root {
     --primaryColor: hsl(94, 55%, 56%);
     --hoverColor: hsl(93, 75%, 76%);
     --paleGreen: hsl(96, 75%, 89%);
@@ -27,44 +27,45 @@
     --smallestFontSize: .75rem
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.grid{
+.grid {
     display: grid;
     align-items: center;
     gap: 1.5rem;
 }
 
-html{
+html {
     font-size: 90%;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.icon{
+.icon {
     font-size: var(--h2FontSize);
     cursor: pointer;
 }
 
-img, video{
+img,
+video {
     height: auto;
     width: 100%;
 }
 
-.message{
+.message {
     display: none;
 }
 
-.showMessage{
+.showMessage {
     display: block;
     color: var(--whitehColor);
     padding: 10px;
@@ -73,7 +74,7 @@ img, video{
     text-align: center;
 }
 
-.showMessage{
+.showMessage {
     display: block;
     color: white;
     background: rgb(255, 0, 0);
@@ -82,7 +83,7 @@ img, video{
     font-weight: bold;
 }
 
-.btn{
+.btn {
     border: none;
     outline: none;
     cursor: pointer;
@@ -91,16 +92,17 @@ img, video{
     color: var(--greyText);
 }
 
-.btn .icon{
+.btn .icon {
     margin-left: .5rem;
 }
 
-.btn:hover{
+.btn:hover {
     color: var(--primaryColor);
     background: var(--paleGreen);
 }
 
-.loginPage, .registerPage{
+.loginPage,
+.registerPage {
     height: 100vh;
     width: 100%;
     margin: auto;
@@ -108,7 +110,7 @@ img, video{
     overflow: hidden;
     box-shadow: 0 7px 50px rgb(214, 223, 213);
 
-    .container{
+    .container {
         height: 75vh;
         width: 60%;
         margin: auto;
@@ -116,7 +118,7 @@ img, video{
         border-radius: 10px;
         background: hsl(0, 0%, 91%);
 
-        .videoDiv{
+        .videoDiv {
             position: relative;
             display: flex;
             flex-basis: 50%;
@@ -130,11 +132,12 @@ img, video{
             border-radius: 10px;
             overflow: hidden;
 
-            video, .footerDiv{
+            video,
+            .footerDiv {
                 position: absolute;
             }
 
-            video{
+            video {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
@@ -144,23 +147,23 @@ img, video{
                 left: 0;
             }
 
-            .textDiv{
+            .textDiv {
                 position: relative;
 
-                .title{
+                .title {
                     color: white;
                     font-size: 35px;
                     font-weight: 900;
                 }
 
-                p{
+                p {
                     color: white;
                     padding: 1rem;
                     font-weight: 900;
                 }
             }
 
-            .footerDiv{
+            .footerDiv {
                 bottom: 10px;
                 padding: 0 1rem;
                 height: 60px;
@@ -171,11 +174,11 @@ img, video{
                 backdrop-filter: blur(1px);
                 border-radius: 10px;
 
-                .text{
+                .text {
                     color: var(--whitehColor);
                 }
 
-                .btn{
+                .btn {
                     background-color: white;
                     color: var(--primaryColor);
                     padding: .8rem 1.5rem;
@@ -183,7 +186,7 @@ img, video{
                     font-weight: 400;
                     transition: .3s ease;
 
-                    &:hover{
+                    &:hover {
                         background: var(--hoverColor);
                         color: var(--blackColor);
                     }
@@ -191,45 +194,45 @@ img, video{
             }
         }
 
-        .formDiv{
+        .formDiv {
             flex-basis: 50%;
             margin: auto;
             flex-direction: column;
             gap: 1.5rem;
             transform: translateY(-1rem);
 
-            .headerDiv{
+            .headerDiv {
                 text-align: center;
                 padding: 1.5rem 0;
 
-                img{
+                img {
                     width: 60px;
                     padding-bottom: .5rem;
                 }
 
-                h3{
+                h3 {
                     font-size: 25px;
                     color: var(--blackColor);
                     font-weight: 600;
                 }
             }
 
-            .form{
+            .form {
                 gap: 1rem;
 
-                .inputDiv{
-                    .icon{
+                .inputDiv {
+                    .icon {
                         color: var(--grey);
                     }
 
-                    input{
+                    input {
                         background: none;
                         outline: none;
-                        border: none ;
+                        border: none;
                         width: 200px;
                     }
 
-                    label{
+                    label {
                         color: var(--blackColor);
                         font-weight: 400;
                         font-size: 14px;
@@ -237,7 +240,7 @@ img, video{
                         display: block;
                     }
 
-                    .input{
+                    .input {
                         gap: .5rem;
                         padding: 1rem;
                         background: var(--inputColor);
@@ -245,7 +248,7 @@ img, video{
                     }
                 }
 
-                .btn{
+                .btn {
                     padding: .8rem;
                     background: var(--primaryColor);
                     border-radius: 10px;
@@ -258,29 +261,29 @@ img, video{
                     gap: .5rem;
                     transition: .3s ease;
 
-                    .icon{
+                    .icon {
                         font-size: 25px;
                         transition: .3s ease;
                     }
 
-                    &:hover{
+                    &:hover {
                         background: var(--hoverColor);
                         color: var(--blackColor);
 
-                        .icon{
+                        .icon {
                             color: var(--blackColor);
                             transform: translateX(5px);
                         }
                     }
                 }
 
-                .forgotPassword{
+                .forgotPassword {
                     font-size: 13px;
                     color: var(--blackColor);
                     opacity: .7;
                     text-align: center;
 
-                    a{
+                    a {
                         text-decoration: underline;
                         cursor: pointer;
                         opacity: 1;
@@ -290,4 +293,60 @@ img, video{
         }
     }
 
+}
+
+
+@media screen and (max-width: 602px) {
+    .loginPage,
+    .registerPage {
+        .container {
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            padding: 1.5rem;
+
+            .videoDiv {
+                width: 100%;
+
+                .textDiv {
+                    .title {
+                        font-size: 20px;
+                    }
+
+                    p {
+                        padding: 1rem;
+                    }
+                }
+
+                .footerDiv {
+                    .text{
+                        font-size: 12px;
+                    }
+
+                    .btn{
+                        padding: .8rem 1.5rem;
+                    }
+                }
+            }
+
+            .formDiv{
+                .headerDiv{
+                    padding: 1.5rem 0;
+                }
+
+                h3{
+                    font-size: 20px;
+                }
+
+                .form{
+                    .inputDiv{
+                        input{
+                            width: 100%;
+                            max-width: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
