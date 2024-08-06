@@ -1,0 +1,5 @@
+📂Assets 
+Icons: https://react-icons.github.io/react-i...
+Fonts: https://fonts.google.com/
+Videos: https://pixabay.com/videos/
+Images: https://www.pexels.com/
