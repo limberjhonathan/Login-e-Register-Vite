@@ -333,4 +333,10 @@ video {
     width: 100%;
     max-width: 200px;
   }
+}
+@media screen and (max-width: 927px) {
+  .loginPage .container,
+  .registerPage .container {
+    width: 85%;
+  }
 }/*# sourceMappingURL=App.css.map */
