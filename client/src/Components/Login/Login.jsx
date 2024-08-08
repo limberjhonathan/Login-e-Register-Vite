@@ -26,11 +26,11 @@ export default function Login() {
         }).then((response) => {
             console.log(response);
 
-            if (response.data.message) {
+            if (response.data.message === 'Login successful') {
+                navigateTo('/dashboard');
+            } else {
                 setLoginStatus('Credentials Don’t Exist!');
                 navigateTo('/');
-            } else {
-                navigateTo('/dashboard');
             }
         });
     };
