@@ -1,6 +1,7 @@
 import express from 'express';
 import mysql from 'mysql2';
 import cors from 'cors';
+import bcrypt from "bcrypt"
 
 const app = express();
 
@@ -23,13 +24,16 @@ db.connect((err) => {
     console.log('Connected to the database.');
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
     const username = req.body.UserName;
     const email = req.body.Email;
     const password = req.body.Password;
 
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     const sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    const values = [username, email, password];
+    const values = [username, email, hashedPassword];
     db.query(sql, values, (err, results) => {
         if (err) {
             console.log(err);
@@ -44,18 +48,25 @@ app.post("/login", (req, res)=>{
     const sentloginUserName = req.body.LoginUserName
     const sentloginPassword = req.body.LoginPassword
 
-    const sql = "SELECT * FROM users WHERE username = ? && password = ?";
-    const values = [sentloginUserName, sentloginPassword];
+    const sql = "SELECT * FROM users WHERE username = ?";
 
-    db.query(sql, values, (err, results) => {
+    db.query(sql, [sentloginUserName], async (err, results) => {
         if (err) {
             console.log(err);
-            return res.json({ error: err}); 
+            return res.json({ error: err }); 
         }
-        if(results.length > 0){
-            res.send(results)
-        }else{
-            res.send({message: 'Creadentials Don`t match!' })
+
+        if (results.length > 0) {
+            const user = results[0];
+            const match = await bcrypt.compare(sentloginPassword, user.password);
+
+            if (match) {
+                res.send({ message: 'Login successful', user: user, results: results  });
+            } else {
+                res.send({ message: 'Credentials don’t match!' });
+            }
+        } else {
+            res.send({ message: 'User not found!' });
         }
     });
 })
