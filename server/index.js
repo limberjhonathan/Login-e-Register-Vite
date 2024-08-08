@@ -24,8 +24,12 @@ db.connect((err) => {
 });
 
 app.post("/register", (req, res) => {
+    const username = req.body.UserName;
+    const email = req.body.Email;
+    const password = req.body.Password;
+
     const sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    const values = [req.body.UserName, req.body.Email, req.body.Password];
+    const values = [username, email, password];
     db.query(sql, values, (err, results) => {
         if (err) {
             console.log(err);
