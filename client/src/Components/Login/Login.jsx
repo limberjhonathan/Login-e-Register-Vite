@@ -18,6 +18,13 @@ export default function Login() {
     const [loginStatus, setLoginStatus] = useState('');
     const [statusHolder, setStatusHolder] = useState('message');
 
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            navigateTo('/dashboard');
+        }
+    }, [navigateTo]);
+
     const loginUser = (e) => {
         e.preventDefault();
         Axios.post('http://localhost:3000/login', {
@@ -27,6 +34,7 @@ export default function Login() {
             console.log(response);
 
             if (response.data.message === 'Login successful') {
+                localStorage.setItem('token', response.data.token);
                 navigateTo('/dashboard');
             } else {
                 setLoginStatus('Credentials Don’t Exist!');
