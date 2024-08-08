@@ -2,6 +2,7 @@ import express from 'express';
 import mysql from 'mysql2';
 import cors from 'cors';
 import bcrypt from "bcrypt"
+import jwt from 'jsonwebtoken';
 
 const app = express();
 
@@ -23,6 +24,12 @@ db.connect((err) => {
     }
     console.log('Connected to the database.');
 });
+
+const SECRET_KEY = '838HHJSK_*&2sol2)ks';
+
+const generateToken = (user) => {
+    return jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1m' });
+};
 
 app.post("/register", async (req, res) => {
     const username = req.body.UserName;
@@ -61,7 +68,9 @@ app.post("/login", (req, res)=>{
             const match = await bcrypt.compare(sentloginPassword, user.password);
 
             if (match) {
-                res.send({ message: 'Login successful', user: user, results: results  });
+                const token = generateToken(user);
+                // console.log("---->", token)
+                res.send({ message: 'Login successful', user: user, results: results, token});
             } else {
                 res.send({ message: 'Credentials don’t match!' });
             }
