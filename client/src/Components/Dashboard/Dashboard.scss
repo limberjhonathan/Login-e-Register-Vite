@@ -1,0 +1,11 @@
+.container-btn{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .btn{
+        font-weight: bold;  
+        color: black;
+    }
+}
