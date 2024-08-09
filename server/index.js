@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const waitTime = '30m'
+
 const db = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
@@ -28,7 +30,7 @@ db.connect((err) => {
 const SECRET_KEY = '838HHJSK_*&2sol2)ks';
 
 const generateToken = (user) => {
-    return jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: '1m' });
+    return jwt.sign({ id: user.id, username: user.username }, SECRET_KEY, { expiresIn: waitTime });
 };
 
 app.post("/register", async (req, res) => {
