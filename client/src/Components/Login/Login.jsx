@@ -6,6 +6,7 @@ import { FaUserShield } from 'react-icons/fa';
 import { BsFillShieldLockFill } from 'react-icons/bs';
 import { AiOutlineSwapRight } from 'react-icons/ai';
 import Axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 import video from '../../LoginAssets/video.mp4';
 import logo from '../../LoginAssets/logo.png';
@@ -18,13 +19,25 @@ export default function Login() {
     const [loginStatus, setLoginStatus] = useState('');
     const [statusHolder, setStatusHolder] = useState('message');
 
+    // useEffect que verifica se um token válido está presente no localStorage ao carregar o componente.
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            navigateTo('/dashboard');
+            try {
+                const decodedToken = jwtDecode(token);
+                const currentTime = Date.now() / 1000;
+                // Se o token estiver válido, redireciona para a página de dashboard.
+                if (decodedToken.exp > currentTime) {
+                    navigateTo('/dashboard');
+                }
+            } catch (error) {
+                console.error('Token decoding failed:', error);
+                localStorage.removeItem('token');
+            }
         }
     }, [navigateTo]);
 
+    // Função para lidar com o envio do formulário de login
     const loginUser = (e) => {
         e.preventDefault();
         Axios.post('http://localhost:3000/login', {
@@ -43,6 +56,7 @@ export default function Login() {
         });
     };
 
+    // useEffect para controlar a exibição da mensagem de status.
     useEffect(() => {
         if (loginStatus !== '') {
             setStatusHolder('showMessage');
