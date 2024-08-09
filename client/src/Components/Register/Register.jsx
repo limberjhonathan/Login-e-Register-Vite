@@ -1,7 +1,7 @@
 import {useState} from "react";
 import './Register.css';
 import '../../App.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUserShield } from 'react-icons/fa';
 import { BsFillShieldLockFill } from 'react-icons/bs';
 import { AiOutlineSwapRight } from 'react-icons/ai';
@@ -17,14 +17,17 @@ export default function Register() {
     const [username, setUserName] = useState('')
     const [password, setPassword] = useState('')
 
-    const createUser = () => {
-        event.preventDefault();
+    const navigateTo = useNavigate();
+
+    const createUser = (e) => {
+        e.preventDefault();
         Axios.post('http://localhost:3000/register', {
             Email: email,
             UserName: username,
             Password: password
         }).then(()=>{
             console.log('User has been created')
+            navigateTo('/')
         })
     }
 
