@@ -19,7 +19,6 @@ Este projeto é composto por um frontend em React com Vite e um backend em Node.
 
     ```sh
     cd /server
-    node index
     ```
      ```sh
     node index
@@ -91,9 +90,9 @@ login-register/
     ```
     Substitua `seu_usuario` pelo nome de usuário que você usa para acessar o MySQL. O comando pedirá sua senha do MySQL.
 
-### Estrutura do Arquivo `LoginAndRegister.sql`
+### Estrutura do Arquivo `plantdb.sql`
 
-O arquivo `LoginAndRegister.sql` deve conter o seguinte:
+O arquivo `plantdb.sql` deve conter o seguinte:
 
 ```sql
 -- Criar o banco de dados
