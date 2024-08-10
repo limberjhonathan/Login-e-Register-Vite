@@ -58,8 +58,7 @@ login-register/
 ├── client/
 │   ├── node_modules/
 │   ├── src/
-│   ├── package.json
-│   └── server.js
+│   └── package.json
 ├── server/
 │   ├── node_modules/
 │   ├── public/
