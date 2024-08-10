@@ -31,7 +31,7 @@ Este projeto é composto por um frontend em React com Vite e um backend em Node.
 |----------|----------|----------|
 | <img src="https://github.com/user-attachments/assets/9630e6c5-15b6-41f6-92e1-50685ea74416" alt="Imagem 1" width="400px"> | <img src="https://github.com/user-attachments/assets/59cf4ef3-e927-40da-9176-864028faaa30" alt="Imagem 2" width="400px"> | <img src="https://github.com/user-attachments/assets/1c5ead02-0d33-4822-b63d-9ee1a48ef3b3" alt="Imagem 3" width="400px"> |
 
-https://github.com/user-attachments/assets/96d7bb9a-0213-4589-8368-c603d162e467
+https://github.com/user-attachments/assets/f7dc3d14-c14a-46f2-bab3-ed14ed9ecf5b
 
 ### Tecnologias Utilizadas
 
